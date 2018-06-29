@@ -1,0 +1,27 @@
+body {
+  font-family: 'Lora', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  width: 100vh;
+  height: 100%;
+  /*color: white;
+  background-color: black;*/
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0 0 25px;
+}
+
+.content {
+    margin: 0 auto;
+  color:white;
+  margin-top: 300px;
+  position: relative;
+  left:90%;
+}
+.navbar a{
+  color:white;
+}
+
+Photo by Ryan Thomas Ang on Unsplash

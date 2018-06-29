@@ -12,10 +12,11 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="cc.css">
+    <link rel="stylesheet" href="currency-converter.css">
+    <script type="text/javascript" src="currency-converter.js"></script>
   </head>
 
-  <body id="page-top" style="background: url(homepage.png); background-size: cover;"  >
+  <body id="page-top" style="background: url(homepage1.jpg); background-size: cover;"  >
 
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg  fixed-top" >
@@ -34,6 +35,7 @@
             
 
             <div class="row">
+                <!-- <form  method="GET"> -->
 
                 <select class="col-sm-2" id="currency-selector">
                      <option value=""> </option>
@@ -43,98 +45,61 @@
                 <input class="col-sm-3" id="amount" type="number" placeholder="Enter Amount">
             
                 <select class="col-sm-2" id="currency-selector2">
-                        <option value=""> </option>
-   
-                   </select>
-
-             </div>
-
+                    <option value=""> </option>
+                </select>
                 <br />
-             <button id="convert" class="btn btn-round"> CONVERT</button>
+                <button id="convert" onclick="convert_currency()" class="btn btn-round"> CONVERT</button>
+                <!-- </form> -->
+            </div>
 
-             <p id="result"></p>
+             <p id="result" style="background:#fff"></p>
 
         </div>
 
-    <script type="text/javascript">
+        <!-- <script>
+            let select_box = document.getElementById('currency-selector');
+            select_box.length = 0;
 
-                var https = require('https');
+            //select 2
+            let select_box2 = document.getElementById('currency-selector2');
+            select_box2.length = 0;
 
-                function convertCurrency(amount, fromCurrency, toCurrency, cb) {
-                var apiKey = 'your-api-key-here';
+            const url = 'https://free.currencyconverterapi.com/api/v5/countries'
 
-                fromCurrency = encodeURIComponent(fromCurrency);
-                toCurrency = encodeURIComponent(toCurrency);
-                var query = fromCurrency + '_' + toCurrency;
+            const request = new XMLHttpRequest();
+            request.open('GET', url, true);
 
-                var url = 'https://www.currencyconverterapi.com/api/v5/convert?q='
-                            + query + '&compact=ultra&apiKey=' + apiKey;
+            request.onload = function() {
+            if (request.status === 200) {
+                const data = JSON.parse(request.responseText);
+                let option;  let option2;
+                for (i in data.results) {
+                    option = document.createElement('option');
+                    option.text = data.results[i].currencyId;
+                    option.value = data.results[i].id;
+                    select_box.add(option);
 
-                https.get(url, function(res){
-                    var body = '';
-
-                    res.on('data', function(chunk){
-                        body += chunk;
-                    });
-
-                    res.on('end', function(){
-                        try {
-                            var jsonObj = JSON.parse(body);
-
-                            var val = jsonObj[query];
-                            if (val) {
-                            var total = val * amount;
-                            cb(null, Math.round(total * 100) / 100);
-                            } else {
-                            var err = new Error("Value not found for " + query);
-                            console.log(err);
-                            cb(err);
-                            }
-                        } catch(e) {
-                            console.log("Parse error: ", e);
-                            cb(e);
-                        }
-                    });
-                }).on('error', function(e){
-                        console.log("Got an error: ", e);
-                        cb(e);
-                });
+                    option2 = document.createElement('option');
+                    option2.text = data.results[i].currencyId;
+                    option2.value = data.results[i].id;
+                    select_box2.add(option2);
+                    select_box2.add(option2);
                 }
-
-                //uncomment to test
-                /*
-                convertCurrency(10, 'USD', 'PHP', function(err, amount) {
-                console.log(amount);
-                });
-                */
-        fetch('https://free.currencyconverterapi.com/api/v5/countries')
-        
-         .then(function(response) {
-        
-           return response.json();
-        
-         })
-        
-         .then(function(results) {
-        
-           for (const result in results) {
-        
-              for (const id in results[result]) {
-        
-                  
-        
-                    console.log(results[result][id]["currencyId"]);
-        
                 
-        
-              }
-        
+            } else {
+                // Reached the server, but it returned an error
+            }   
             }
-        
-         }); 
 
-    </script>   
+            request.onerror = function() {
+            console.error('An error occurred fetching the JSON from ' + url);
+            };
 
+            request.send();
+        </script> -->
+
+     
+   
     </body>
 
 </html>
