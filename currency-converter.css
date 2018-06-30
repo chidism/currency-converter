@@ -2,7 +2,7 @@ body {
   font-family: 'Lora', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
   width: 100vh;
-  height: 100vh;
+  height: 100%;
   /*color: white;
   background-color: black;*/
 }
@@ -14,24 +14,72 @@ p {
 }
 
 .content {
-    margin: 0 auto;
+   
   color:white;
-  margin-top: 300px;
-  position: relative;
-  left:90%;
+  width:500px;
+  margin-top: 250px;
+  margin-bottom: 100px;
+  margin-left: 450px;
+  
+ text-align:center;
+  /* left:90%; */
 }
+/* .form{
+  margin: 0 auto;
+} */
 .navbar a{
   color:white;
 }
-.space {
-  height:300px;
+input{
+  height: 2.5em;
+  border-color: #753E18;
+  border-width:2px;
 }
-.container {
-  background:#fff;
-	position:relative;
-  width:50%;
+.c-select {
+  height: 2.5em;
+  border-color: #753E18;
+  border-width:2px;
+}
+.btn{
+  border-color:#753E18;
+  color:#753E18;
+}
+.btn:hover{
+  background:#753E18;
+  color:white;
   
-  margin-top: 300px;
-	margin:0 auto;
 }
-Photo by Ryan Thomas Ang on Unsplash
+#result{
+  height: 3em;
+  border: 1.5px solid #753E18;
+  background: #ffffff;
+  /* width:200px; */
+  text-justify: center;
+  
+}
+@media(max-width:576px) {
+  .content {
+    position:relative;
+   width:80%;
+   margin-top: 25%;
+   margin-bottom: 10%;
+   margin-right: 5%;
+   
+  text-align:center;
+   /* left:90%; */
+ }
+
+}
+@media(max-width:976px) {
+  .content {
+    
+   width:80%;
+   margin-top: 20%;
+   margin-bottom: 10%;
+   margin-left: 30%;
+   
+  text-align:center;
+   /* left:90%; */
+ }
+
+Photo by Ryan Thomas Ang on Unsplash #2EB1C6

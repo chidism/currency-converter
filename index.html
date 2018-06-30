@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="currency-converter.css">
     <script type="text/javascript" src="currency-converter.js"></script>
+    <!-- <script type="text/javascript" src="indexDBConnector.js"></script> -->
   </head>
 
   <body id="page-top" style="background: url(homepage1.jpg); background-size: cover;"  >
@@ -25,40 +26,52 @@
          
         </nav>
 
-                <!-- Page Content -->
-            <div class="space"> </div> 
-        
-            <div class="container converter" >
+        <!-- Page Content -->
+       
+        <div class="container content" >
+            
 
-             
+           <form class="form">
+
                 <h3 >Convert any currency
                 <br>Online and Offline.</h3>
-            
-
-                <div class="row">
-                <!-- <form  method="GET"> -->
-
-                    <select class="col-sm-3" id="currency-selector">
-                        <option value=""> </option>
-
-                    </select>
-
-                    <input class="col-sm-3" id="amount" type="number" placeholder="Enter Amount">
                 
-                    <select class="col-sm-3" id="currency-selector2">
-                        <option value=""> </option>
-                    </select>
-                
+                    <br />
+                    <!-- Enter amount to be converted -->
+                <div class="">
+                    <!-- <label for="amount">Amount</label> -->
+                     <input class="col-sm-4 " id="amount" type="number" placeholder="Amount ">
                 </div>
-            
                 <br />
-                <button id="convert" onclick="convert_currency()" class="btn btn-round"> CONVERT</button>
-                 <br />
-                <p id="result" style="background:#fff"></p>
+                <!-- Choose currencies -->
+                <div class="row">
+                        
+                    <select class="col-sm-5 c-select" id="currency-selector">
+                        <option value="">Convert From </option>
 
-            </div>
+                    </select>
 
-        
+                   
+                    <select class="col-sm-5 offset-sm-1 c-select" id="currency-selector2">
+                        <option value="">Convert To </option>
+                    </select>
+                   
+                </div>
+            </form>
+            <br />
+                <div >
+                    <br />
+                    <button id="convert" onclick="convert_currency()" class="btn btn-round"> CONVERT</button>
+                </div>
+
+                <br />
+                <div class="justify-content-center">
+                    <p id="result" ></p>
+                </div>
+        </div>
+
+
+     
    
     </body>
 
