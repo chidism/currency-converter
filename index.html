@@ -25,80 +25,40 @@
          
         </nav>
 
-        <!-- Page Content -->
-       
-        <div class="container content mx-auto" >
+                <!-- Page Content -->
+            <div class="space"> </div> 
+        
+            <div class="container converter" >
 
-             <h1>Currency Converter</h1>
-             <h3 >Convert any currency
-             <br>Online and Offline.</h3>
+             
+                <h3 >Convert any currency
+                <br>Online and Offline.</h3>
             
 
-            <div class="row">
+                <div class="row">
                 <!-- <form  method="GET"> -->
 
-                <select class="col-sm-2" id="currency-selector">
-                     <option value=""> </option>
+                    <select class="col-sm-3" id="currency-selector">
+                        <option value=""> </option>
 
-                </select>
+                    </select>
 
-                <input class="col-sm-3" id="amount" type="number" placeholder="Enter Amount">
+                    <input class="col-sm-3" id="amount" type="number" placeholder="Enter Amount">
+                
+                    <select class="col-sm-3" id="currency-selector2">
+                        <option value=""> </option>
+                    </select>
+                
+                </div>
             
-                <select class="col-sm-2" id="currency-selector2">
-                    <option value=""> </option>
-                </select>
                 <br />
                 <button id="convert" onclick="convert_currency()" class="btn btn-round"> CONVERT</button>
-                <!-- </form> -->
+                 <br />
+                <p id="result" style="background:#fff"></p>
+
             </div>
 
-             <p id="result" style="background:#fff"></p>
-
-        </div>
-
-        <!-- <script>
-            let select_box = document.getElementById('currency-selector');
-            select_box.length = 0;
-
-            //select 2
-            let select_box2 = document.getElementById('currency-selector2');
-            select_box2.length = 0;
-
-            const url = 'https://free.currencyconverterapi.com/api/v5/countries'
-
-            const request = new XMLHttpRequest();
-            request.open('GET', url, true);
-
-            request.onload = function() {
-            if (request.status === 200) {
-                const data = JSON.parse(request.responseText);
-                let option;  let option2;
-                for (i in data.results) {
-                    option = document.createElement('option');
-                    option.text = data.results[i].currencyId;
-                    option.value = data.results[i].id;
-                    select_box.add(option);
-
-                    option2 = document.createElement('option');
-                    option2.text = data.results[i].currencyId;
-                    option2.value = data.results[i].id;
-                    select_box2.add(option2);
-                    select_box2.add(option2);
-                }
-                
-            } else {
-                // Reached the server, but it returned an error
-            }   
-            }
-
-            request.onerror = function() {
-            console.error('An error occurred fetching the JSON from ' + url);
-            };
-
-            request.send();
-        </script> -->
-
-     
+        
    
     </body>
 
