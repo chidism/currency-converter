@@ -1,7 +1,7 @@
 body {
   font-family: 'Lora', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
-  width: 100vh;
+  /* width: 100vh; */
   height: 100%;
   /*color: white;
   background-color: black;*/
@@ -59,9 +59,9 @@ input{
 }
 @media(max-width:576px) {
   .content {
-    position:relative;
-   width:80%;
-   margin-top: 25%;
+    
+   width:200px;
+   margin-top: 35%;
    margin-bottom: 10%;
    margin-right: 5%;
    
@@ -81,5 +81,7 @@ input{
   text-align:center;
    /* left:90%; */
  }
+}
+
 
 Photo by Ryan Thomas Ang on Unsplash #2EB1C6
